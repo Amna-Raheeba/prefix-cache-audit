@@ -1,0 +1,146 @@
+{
+  "attribution_shares": {
+    "header_volatile": 0.306783924548625,
+    "history_rewrite": 0.10843945872220434,
+    "json_key_reorder": 0.07645625488483287,
+    "retrieved_before_static": 0.15065098265870644,
+    "tool_order_shuffle": 0.2808102966256614,
+    "unflagged_change": 0.07685908255996987
+  },
+  "detection": {
+    "f1": 0.9994579945799458,
+    "fn": 1,
+    "fp": 0,
+    "per_class": {
+      "header_volatile": {
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 276
+      },
+      "history_rewrite": {
+        "fn": 1,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 0.9927536231884058,
+        "tp": 137
+      },
+      "json_key_reorder": {
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 95
+      },
+      "retrieved_before_static": {
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 138
+      },
+      "tool_order_shuffle": {
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 276
+      }
+    },
+    "precision": 1.0,
+    "recall": 0.9989165763813651,
+    "tp": 922
+  },
+  "estimator": {
+    "audit": {
+      "lost_token_mae": 201.33333333333334,
+      "lost_token_rel_err": 0.017969128532957495,
+      "recoverable_abs_err": 3152.1500000000015,
+      "recoverable_rel_err": 0.12749463616233722
+    },
+    "baseline": {
+      "lost_token_mae": 2033.6458333333333,
+      "lost_token_rel_err": 0.3728413186803161,
+      "recoverable_abs_err": 17538.79375,
+      "recoverable_rel_err": 0.8143304251899589
+    }
+  },
+  "families": {
+    "header_clock": {
+      "canonical_cost": 83086.8,
+      "est_wasted_tokens": 68745,
+      "logged_cost": 262542.0,
+      "recoverable_pct": 0.6835294924240694,
+      "traces": 6,
+      "true_lost_tokens": 68745
+    },
+    "history_rewrite": {
+      "canonical_cost": 83068.2,
+      "est_wasted_tokens": 50108,
+      "logged_cost": 196117.80000000005,
+      "recoverable_pct": 0.5764372229343794,
+      "traces": 6,
+      "true_lost_tokens": 49532
+    },
+    "json_churn": {
+      "canonical_cost": 129241.80000000002,
+      "est_wasted_tokens": 53340,
+      "logged_cost": 210220.20000000007,
+      "recoverable_pct": 0.38520751098134254,
+      "traces": 6,
+      "true_lost_tokens": 53340
+    },
+    "long_gap_ttl": {
+      "canonical_cost": 263136.0,
+      "est_wasted_tokens": 59939,
+      "logged_cost": 263136.0,
+      "recoverable_pct": 0.0,
+      "traces": 6,
+      "true_lost_tokens": 68931
+    },
+    "mixed_kitchen_sink": {
+      "canonical_cost": 84136.8,
+      "est_wasted_tokens": 71385,
+      "logged_cost": 272700.0,
+      "recoverable_pct": 0.6914675467546755,
+      "traces": 6,
+      "true_lost_tokens": 71385
+    },
+    "retrieved_first": {
+      "canonical_cost": 83111.40000000001,
+      "est_wasted_tokens": 68813,
+      "logged_cost": 262677.0,
+      "recoverable_pct": 0.6835984878767459,
+      "traces": 6,
+      "true_lost_tokens": 68813
+    },
+    "stable": {
+      "canonical_cost": 82625.4,
+      "est_wasted_tokens": 16690,
+      "logged_cost": 82625.4,
+      "recoverable_pct": 0.0,
+      "traces": 6,
+      "true_lost_tokens": 16690
+    },
+    "tool_shuffle": {
+      "canonical_cost": 82967.4,
+      "est_wasted_tokens": 59431,
+      "logged_cost": 229909.8,
+      "recoverable_pct": 0.6391306503681009,
+      "traces": 6,
+      "true_lost_tokens": 59335
+    }
+  },
+  "masked_breakers": 413,
+  "n_pairs": 1104,
+  "n_requests_per_trace": 24,
+  "n_traces": 48,
+  "pooled_recoverable_pct": 0.49920800176096974,
+  "pricing": {
+    "base_rate": 3.0,
+    "read_rate": 0.3,
+    "write_rate": 3.75
+  },
+  "ttl_minutes": 5.0
+}
