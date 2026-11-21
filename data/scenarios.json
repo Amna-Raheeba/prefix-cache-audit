@@ -1,0 +1,10 @@
+{
+  "header_clock": "A request counter and timestamp in the header of every prompt; the prefix dies at token 3.",
+  "history_rewrite": "Conversation history is re-worded every turn (synonym drift) instead of appended verbatim.",
+  "json_churn": "A JSON state blob re-serialised with shuffled keys each request, with occasional genuine value changes the auditor must not blame on ordering.",
+  "long_gap_ttl": "Shuffled tool list, but requests land 6-12 minutes apart against a 5-minute cache TTL; expiry, not ordering, is the binding cost.",
+  "mixed_kitchen_sink": "Volatile header, retrieved-first layout and a shuffled tool list in one session; the earliest breaker masks the others.",
+  "retrieved_first": "Fresh retrieved chunks are placed before the system text and tool definitions, so their churn invalidates the static segments behind them.",
+  "stable": "Control session: constant header, sorted tools, append-only history; retrieval churns after the static prefix, where churn is cheap.",
+  "tool_shuffle": "The tool definitions are re-shuffled on every request; same tools, same text, new order."
+}

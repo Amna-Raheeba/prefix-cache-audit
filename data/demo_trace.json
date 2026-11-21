@@ -1,0 +1,750 @@
+{
+  "family": "mixed_kitchen_sink",
+  "seed": 3,
+  "requests": [
+    {
+      "index": 0,
+      "at_minutes": 0.0,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-11-22T09:00:00Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r1: policy section 4.2 states refunds for damaged items are issued within five business days section 2.9 explains how goodwill discounts stack with sale prices chunk r2: carrier notes say the delivery van serves this district after midday section 7.1 covers address changes made before the shipping label is printed chunk r3: policy section 4.2 states refunds for damaged items are issued within five business days the warehouse scan shows the parcel left the depot on the morning truck",
+          "canonical_text": "chunk r1: policy section 4.2 states refunds for damaged items are issued within five business days section 2.9 explains how goodwill discounts stack with sale prices chunk r2: carrier notes say the delivery van serves this district after midday section 7.1 covers address changes made before the shipping label is printed chunk r3: policy section 4.2 states refunds for damaged items are issued within five business days the warehouse scan shows the parcel left the depot on the morning truck",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:get_tracking return the carrier tracking state for one order number tool:search_orders find orders by customer name date range or status filter tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:apply_discount apply a goodwill discount code to the current order tool:issue_refund refund a payment method for a returned or damaged item",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"tier\": \"gold\", \"currency\": \"USD\", \"cart_items\": 2, \"region\": \"us-central\", \"flags\": \"beta\", \"loyalty_points\": 340, \"discount_pct\": 10, \"channel\": \"web\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": null
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=0 note=customer pending policy refund policy delivery",
+          "canonical_text": "scratch step=0 note=customer pending policy refund policy delivery",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: do you have this jacket in a medium at the depot",
+          "canonical_text": "user: do you have this jacket in a medium at the depot",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "at_minutes": 2.9,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=1 ts=2026-11-22T09:02:54Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r4: the depot log records a weather delay on the northern route inventory for the winter catalogue refreshes every night at two chunk r5: inventory for the winter catalogue refreshes every night at two carrier notes say the delivery van serves this district after midday chunk r6: gift orders hide prices on the packing slip by default rule loyalty points post three days after the payment clears",
+          "canonical_text": "chunk r4: the depot log records a weather delay on the northern route inventory for the winter catalogue refreshes every night at two chunk r5: inventory for the winter catalogue refreshes every night at two carrier notes say the delivery van serves this district after midday chunk r6: gift orders hide prices on the packing slip by default rule loyalty points post three days after the payment clears",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:search_orders find orders by customer name date range or status filter tool:get_tracking return the carrier tracking state for one order number tool:check_inventory report warehouse stock levels for a product code tool:apply_discount apply a goodwill discount code to the current order tool:create_ticket open a support ticket and return its reference code tool:issue_refund refund a payment method for a returned or damaged item",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"loyalty_points\": 340, \"discount_pct\": 10, \"tier\": \"gold\", \"flags\": \"beta\", \"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"region\": \"us-central\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=1 note=billing pending draft ticket draft verify",
+          "canonical_text": "scratch step=1 note=billing pending draft ticket draft verify",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: the wrong size arrived and i want to exchange it",
+          "canonical_text": "user: the wrong size arrived and i want to exchange it",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "at_minutes": 5.609999999999999,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=2 ts=2026-11-22T09:05:36Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r7: gift orders hide prices on the packing slip by default rule the warehouse scan shows the parcel left the depot on the morning truck chunk r8: the returns desk accepts items within thirty days of the delivery scan loyalty points post three days after the payment clears chunk r9: section 2.9 explains how goodwill discounts stack with sale prices carrier notes say the delivery van serves this district after midday",
+          "canonical_text": "chunk r7: gift orders hide prices on the packing slip by default rule the warehouse scan shows the parcel left the depot on the morning truck chunk r8: the returns desk accepts items within thirty days of the delivery scan loyalty points post three days after the payment clears chunk r9: section 2.9 explains how goodwill discounts stack with sale prices carrier notes say the delivery van serves this district after midday",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:get_tracking return the carrier tracking state for one order number tool:search_orders find orders by customer name date range or status filter tool:create_ticket open a support ticket and return its reference code tool:check_inventory report warehouse stock levels for a product code tool:apply_discount apply a goodwill discount code to the current order tool:issue_refund refund a payment method for a returned or damaged item",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"channel\": \"web\", \"discount_pct\": 10, \"currency\": \"USD\", \"tier\": \"gold\", \"cart_items\": 2, \"loyalty_points\": 340, \"region\": \"us-central\", \"flags\": \"beta\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=2 note=billing pending depot pending policy ticket",
+          "canonical_text": "scratch step=2 note=billing pending depot pending policy ticket",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: where is my order and when will it arrive at my house",
+          "canonical_text": "user: where is my order and when will it arrive at my house",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "at_minutes": 7.359999999999999,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=3 ts=2026-11-22T09:07:21Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r10: section 5.4 describes exchanges for a different size or colour the warehouse scan shows the parcel left the depot on the morning truck chunk r11: the depot log records a weather delay on the northern route the depot log records a weather delay on the northern route chunk r12: gift orders hide prices on the packing slip by default rule the customer file lists a preferred contact window in the evening",
+          "canonical_text": "chunk r10: section 5.4 describes exchanges for a different size or colour the warehouse scan shows the parcel left the depot on the morning truck chunk r11: the depot log records a weather delay on the northern route the depot log records a weather delay on the northern route chunk r12: gift orders hide prices on the packing slip by default rule the customer file lists a preferred contact window in the evening",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:search_orders find orders by customer name date range or status filter tool:issue_refund refund a payment method for a returned or damaged item tool:check_inventory report warehouse stock levels for a product code tool:get_tracking return the carrier tracking state for one order number tool:apply_discount apply a goodwill discount code to the current order tool:create_ticket open a support ticket and return its reference code",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"loyalty_points\": 340, \"currency\": \"USD\", \"flags\": \"beta\", \"cart_items\": 2, \"channel\": \"web\", \"region\": \"us-central\", \"discount_pct\": 10, \"tier\": \"gold\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=3 note=draft carrier policy pending delivery pending",
+          "canonical_text": "scratch step=3 note=draft carrier policy pending delivery pending",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: can i change the delivery address before it ships out",
+          "canonical_text": "user: can i change the delivery address before it ships out",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "at_minutes": 9.27,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=4 ts=2026-11-22T09:09:16Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r13: carrier notes say the delivery van serves this district after midday policy section 4.2 states refunds for damaged items are issued within five business days chunk r14: the returns desk accepts items within thirty days of the delivery scan inventory for the winter catalogue refreshes every night at two chunk r15: carrier notes say the delivery van serves this district after midday the depot log records a weather delay on the northern route",
+          "canonical_text": "chunk r13: carrier notes say the delivery van serves this district after midday policy section 4.2 states refunds for damaged items are issued within five business days chunk r14: the returns desk accepts items within thirty days of the delivery scan inventory for the winter catalogue refreshes every night at two chunk r15: carrier notes say the delivery van serves this district after midday the depot log records a weather delay on the northern route",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:check_inventory report warehouse stock levels for a product code tool:issue_refund refund a payment method for a returned or damaged item tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:apply_discount apply a goodwill discount code to the current order tool:search_orders find orders by customer name date range or status filter",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"loyalty_points\": 340, \"discount_pct\": 10, \"channel\": \"web\", \"flags\": \"beta\", \"region\": \"us-central\", \"cart_items\": 2, \"currency\": \"USD\", \"tier\": \"gold\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=4 note=carrier policy customer carrier draft carrier",
+          "canonical_text": "scratch step=4 note=carrier policy customer carrier draft carrier",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: i need a gift receipt without the price printed on it",
+          "canonical_text": "user: i need a gift receipt without the price printed on it",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "at_minutes": 11.61,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=5 ts=2026-11-22T09:11:36Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r16: policy section 4.2 states refunds for damaged items are issued within five business days section 7.1 covers address changes made before the shipping label is printed chunk r17: the returns desk accepts items within thirty days of the delivery scan inventory for the winter catalogue refreshes every night at two chunk r18: the customer file lists a preferred contact window in the evening carrier notes say the delivery van serves this district after midday",
+          "canonical_text": "chunk r16: policy section 4.2 states refunds for damaged items are issued within five business days section 7.1 covers address changes made before the shipping label is printed chunk r17: the returns desk accepts items within thirty days of the delivery scan inventory for the winter catalogue refreshes every night at two chunk r18: the customer file lists a preferred contact window in the evening carrier notes say the delivery van serves this district after midday",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:get_tracking return the carrier tracking state for one order number tool:search_orders find orders by customer name date range or status filter tool:issue_refund refund a payment method for a returned or damaged item tool:create_ticket open a support ticket and return its reference code",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"channel\": \"web\", \"currency\": \"USD\", \"loyalty_points\": 340, \"cart_items\": 2, \"tier\": \"gold\", \"region\": \"us-central\", \"discount_pct\": 10, \"flags\": \"beta\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=5 note=verify refund refund billing verify ticket",
+          "canonical_text": "scratch step=5 note=verify refund refund billing verify ticket",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: do you have this jacket in a medium at the depot",
+          "canonical_text": "user: do you have this jacket in a medium at the depot",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "at_minutes": 12.129999999999999,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=6 ts=2026-11-22T09:12:07Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r19: gift orders hide prices on the packing slip by default rule the returns desk accepts items within thirty days of the delivery scan chunk r20: inventory for the winter catalogue refreshes every night at two the warehouse scan shows the parcel left the depot on the morning truck chunk r21: the depot log records a weather delay on the northern route loyalty points post three days after the payment clears",
+          "canonical_text": "chunk r19: gift orders hide prices on the packing slip by default rule the returns desk accepts items within thirty days of the delivery scan chunk r20: inventory for the winter catalogue refreshes every night at two the warehouse scan shows the parcel left the depot on the morning truck chunk r21: the depot log records a weather delay on the northern route loyalty points post three days after the payment clears",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:apply_discount apply a goodwill discount code to the current order tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:check_inventory report warehouse stock levels for a product code tool:search_orders find orders by customer name date range or status filter",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"channel\": \"web\", \"currency\": \"USD\", \"region\": \"us-central\", \"flags\": \"beta\", \"discount_pct\": 10, \"loyalty_points\": 340, \"tier\": \"gold\", \"cart_items\": 2}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=6 note=carrier policy delivery billing customer draft",
+          "canonical_text": "scratch step=6 note=carrier policy delivery billing customer draft",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: can someone call me back about the billing problem",
+          "canonical_text": "user: can someone call me back about the billing problem",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "at_minutes": 13.719999999999999,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=7 ts=2026-11-22T09:13:43Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r22: inventory for the winter catalogue refreshes every night at two the depot log records a weather delay on the northern route chunk r23: section 2.9 explains how goodwill discounts stack with sale prices the warehouse scan shows the parcel left the depot on the morning truck chunk r24: the depot log records a weather delay on the northern route the depot log records a weather delay on the northern route",
+          "canonical_text": "chunk r22: inventory for the winter catalogue refreshes every night at two the depot log records a weather delay on the northern route chunk r23: section 2.9 explains how goodwill discounts stack with sale prices the warehouse scan shows the parcel left the depot on the morning truck chunk r24: the depot log records a weather delay on the northern route the depot log records a weather delay on the northern route",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:check_inventory report warehouse stock levels for a product code tool:search_orders find orders by customer name date range or status filter tool:apply_discount apply a goodwill discount code to the current order tool:issue_refund refund a payment method for a returned or damaged item tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"tier\": \"gold\", \"channel\": \"web\", \"currency\": \"USD\", \"cart_items\": 2, \"flags\": \"beta\", \"region\": \"us-central\", \"discount_pct\": 10, \"loyalty_points\": 340}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=7 note=verify delivery depot depot carrier policy",
+          "canonical_text": "scratch step=7 note=verify delivery depot depot carrier policy",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: where is my order and when will it arrive at my house",
+          "canonical_text": "user: where is my order and when will it arrive at my house",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "at_minutes": 15.979999999999999,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=8 ts=2026-11-22T09:15:58Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r25: the returns desk accepts items within thirty days of the delivery scan the returns desk accepts items within thirty days of the delivery scan chunk r26: carrier notes say the delivery van serves this district after midday section 7.1 covers address changes made before the shipping label is printed chunk r27: inventory for the winter catalogue refreshes every night at two section 7.1 covers address changes made before the shipping label is printed",
+          "canonical_text": "chunk r25: the returns desk accepts items within thirty days of the delivery scan the returns desk accepts items within thirty days of the delivery scan chunk r26: carrier notes say the delivery van serves this district after midday section 7.1 covers address changes made before the shipping label is printed chunk r27: inventory for the winter catalogue refreshes every night at two section 7.1 covers address changes made before the shipping label is printed",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:create_ticket open a support ticket and return its reference code tool:check_inventory report warehouse stock levels for a product code tool:search_orders find orders by customer name date range or status filter tool:get_tracking return the carrier tracking state for one order number tool:apply_discount apply a goodwill discount code to the current order tool:issue_refund refund a payment method for a returned or damaged item",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"discount_pct\": 10, \"currency\": \"USD\", \"tier\": \"gold\", \"region\": \"us-central\", \"cart_items\": 2, \"flags\": \"beta\", \"loyalty_points\": 340, \"channel\": \"web\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=8 note=draft refund customer delivery billing verify",
+          "canonical_text": "scratch step=8 note=draft refund customer delivery billing verify",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: can someone call me back about the billing problem",
+          "canonical_text": "user: can someone call me back about the billing problem",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "at_minutes": 16.91,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=9 ts=2026-11-22T09:16:54Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r28: the depot log records a weather delay on the northern route the returns desk accepts items within thirty days of the delivery scan chunk r29: the warehouse scan shows the parcel left the depot on the morning truck the warehouse scan shows the parcel left the depot on the morning truck chunk r30: loyalty points post three days after the payment clears policy section 4.2 states refunds for damaged items are issued within five business days",
+          "canonical_text": "chunk r28: the depot log records a weather delay on the northern route the returns desk accepts items within thirty days of the delivery scan chunk r29: the warehouse scan shows the parcel left the depot on the morning truck the warehouse scan shows the parcel left the depot on the morning truck chunk r30: loyalty points post three days after the payment clears policy section 4.2 states refunds for damaged items are issued within five business days",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:create_ticket open a support ticket and return its reference code tool:issue_refund refund a payment method for a returned or damaged item tool:get_tracking return the carrier tracking state for one order number tool:search_orders find orders by customer name date range or status filter tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"discount_pct\": 10, \"cart_items\": 2, \"tier\": \"gold\", \"channel\": \"web\", \"currency\": \"USD\", \"flags\": \"beta\", \"region\": \"us-central\", \"loyalty_points\": 340}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=9 note=verify policy carrier pending billing refund",
+          "canonical_text": "scratch step=9 note=verify policy carrier pending billing refund",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: how many loyalty points did my last order earn me",
+          "canonical_text": "user: how many loyalty points did my last order earn me",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "at_minutes": 17.91,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=10 ts=2026-11-22T09:17:54Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r31: section 7.1 covers address changes made before the shipping label is printed section 7.1 covers address changes made before the shipping label is printed chunk r32: section 5.4 describes exchanges for a different size or colour policy section 4.2 states refunds for damaged items are issued within five business days chunk r33: carrier notes say the delivery van serves this district after midday carrier notes say the delivery van serves this district after midday",
+          "canonical_text": "chunk r31: section 7.1 covers address changes made before the shipping label is printed section 7.1 covers address changes made before the shipping label is printed chunk r32: section 5.4 describes exchanges for a different size or colour policy section 4.2 states refunds for damaged items are issued within five business days chunk r33: carrier notes say the delivery van serves this district after midday carrier notes say the delivery van serves this district after midday",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:get_tracking return the carrier tracking state for one order number tool:apply_discount apply a goodwill discount code to the current order tool:create_ticket open a support ticket and return its reference code tool:issue_refund refund a payment method for a returned or damaged item tool:check_inventory report warehouse stock levels for a product code tool:search_orders find orders by customer name date range or status filter",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"cart_items\": 2, \"tier\": \"gold\", \"loyalty_points\": 340, \"currency\": \"USD\", \"region\": \"us-central\", \"flags\": \"beta\", \"channel\": \"web\", \"discount_pct\": 10}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery user: the refund for the broken item is still not visible agent: your address change is confirmed for the next delivery",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery user: the refund for the broken item is still not visible agent: your address change is confirmed for the next delivery",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=10 note=draft refund draft delivery policy ticket",
+          "canonical_text": "scratch step=10 note=draft refund draft delivery policy ticket",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: can i change the delivery address before it ships out",
+          "canonical_text": "user: can i change the delivery address before it ships out",
+          "breaker": null
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "at_minutes": 20.05,
+      "segments": [
+        {
+          "seg_id": "header",
+          "kind": "header",
+          "text": "session=sup-6092 model=support-agent-v3 region=us-central request=11 ts=2026-11-22T09:20:03Z",
+          "canonical_text": "session=sup-6092 model=support-agent-v3 region=us-central request=0 ts=2026-01-01T00:00:00Z",
+          "breaker": "header_volatile"
+        },
+        {
+          "seg_id": "retrieved",
+          "kind": "retrieved",
+          "text": "chunk r34: the warehouse scan shows the parcel left the depot on the morning truck the returns desk accepts items within thirty days of the delivery scan chunk r35: carrier notes say the delivery van serves this district after midday the depot log records a weather delay on the northern route chunk r36: inventory for the winter catalogue refreshes every night at two the customer file lists a preferred contact window in the evening",
+          "canonical_text": "chunk r34: the warehouse scan shows the parcel left the depot on the morning truck the returns desk accepts items within thirty days of the delivery scan chunk r35: carrier notes say the delivery van serves this district after midday the depot log records a weather delay on the northern route chunk r36: inventory for the winter catalogue refreshes every night at two the customer file lists a preferred contact window in the evening",
+          "breaker": "retrieved_before_static"
+        },
+        {
+          "seg_id": "system",
+          "kind": "system",
+          "text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "canonical_text": "you are the support agent for northwind retail answer every question with the verified order facts first be concise never invent a tracking number or a delivery date escalate billing disputes and legal threats to a human agent immediately cite the policy section whenever you quote a refund rule keep a calm professional tone and close every reply with the next step for the customer",
+          "breaker": null
+        },
+        {
+          "seg_id": "tools",
+          "kind": "tools",
+          "text": "tool:search_orders find orders by customer name date range or status filter tool:check_inventory report warehouse stock levels for a product code tool:issue_refund refund a payment method for a returned or damaged item tool:apply_discount apply a goodwill discount code to the current order tool:get_tracking return the carrier tracking state for one order number tool:create_ticket open a support ticket and return its reference code",
+          "canonical_text": "tool:apply_discount apply a goodwill discount code to the current order tool:check_inventory report warehouse stock levels for a product code tool:create_ticket open a support ticket and return its reference code tool:get_tracking return the carrier tracking state for one order number tool:issue_refund refund a payment method for a returned or damaged item tool:search_orders find orders by customer name date range or status filter",
+          "breaker": "tool_order_shuffle"
+        },
+        {
+          "seg_id": "json_blob",
+          "kind": "json_blob",
+          "text": "{\"currency\": \"USD\", \"loyalty_points\": 340, \"tier\": \"gold\", \"cart_items\": 2, \"discount_pct\": 10, \"channel\": \"web\", \"flags\": \"beta\", \"region\": \"us-central\"}",
+          "canonical_text": "{\"cart_items\": 2, \"channel\": \"web\", \"currency\": \"USD\", \"discount_pct\": 10, \"flags\": \"beta\", \"loyalty_points\": 340, \"region\": \"us-central\", \"tier\": \"gold\"}",
+          "breaker": "json_key_reorder"
+        },
+        {
+          "seg_id": "history",
+          "kind": "history",
+          "text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery user: the refund for the broken item is still not visible agent: your address change is confirmed for the next delivery user: the delivery problem started right after the depot scan agent: i will check the order status and the delivery scan now",
+          "canonical_text": "user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: i will check the order status and the delivery scan now user: my order status check shows the delivery is late again agent: a replacement item leaves the warehouse tomorrow morning user: the refund for the broken item is still not visible agent: the exchange order is booked and a label was sent user: i asked for a size exchange but heard nothing back agent: i can see the problem and have raised a depot ticket user: i asked for a size exchange but heard nothing back agent: the refund was issued and should clear within five days user: the delivery problem started right after the depot scan agent: a replacement item leaves the warehouse tomorrow morning user: my order status check shows the delivery is late again agent: the exchange order is booked and a label was sent user: the delivery problem started right after the depot scan agent: your address change is confirmed for the next delivery user: my order status check shows the delivery is late again agent: your address change is confirmed for the next delivery user: the refund for the broken item is still not visible agent: your address change is confirmed for the next delivery user: the delivery problem started right after the depot scan agent: i will check the order status and the delivery scan now",
+          "breaker": null
+        },
+        {
+          "seg_id": "volatile",
+          "kind": "volatile",
+          "text": "scratch step=11 note=carrier billing ticket carrier ticket refund",
+          "canonical_text": "scratch step=11 note=carrier billing ticket carrier ticket refund",
+          "breaker": null
+        },
+        {
+          "seg_id": "user",
+          "kind": "user",
+          "text": "user: i need a gift receipt without the price printed on it",
+          "canonical_text": "user: i need a gift receipt without the price printed on it",
+          "breaker": null
+        }
+      ]
+    }
+  ]
+}
